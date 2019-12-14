@@ -1,4 +1,4 @@
-# Todo list
+# To do list app
 
 > Build in Vue js by Tim Banks
 
@@ -66,11 +66,17 @@ in helping people get things done.
 ― David Allen, Getting Things Done: The Art of Stress-Free Productivity
 
 I want to make sure I keep my app fairly simple, intuative and smooth.
-There are loads of really great todo apps out there so I will thing of
-this as an MVP to avoid over complicating it.
+As much as it always like to build things that people will use, this is not
+going to be one of those. There are loads of really great todo apps out there
+so I will thing of this as a basic prototype to avoid over complicating it.
 
 ## Thing that would make this better
 
 * Adding Speech api input for to do items, see: https://codepen.io/JamieCurnow/pen/ZoxVQg?editors=1010
 * Persist list between sessions (local storage), see: https://travishorn.com/add-localstorage-to-your-vue-app-in-2-lines-of-code-56eb2c9f371b
 * Create groups or categories for todos so they can be organised in groups or trello style swim lanes
+
+## Cool Vue things I didn't use
+
+* Nuxt; a go to for server side rendering so the app aces seo and performance measures
+*

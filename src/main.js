@@ -1,6 +1,9 @@
 import Vue from "vue";
 import App from "./App.vue";
+import Buefy from "buefy";
 
+/* Use statements */
+Vue.use(Buefy);
 Vue.config.productionTip = false;
 
 new Vue({
