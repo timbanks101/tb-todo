@@ -24,20 +24,22 @@ npm run test:e2e
 npm run lint
 ```
 
-### Acceptance Criteria:
+## Acceptance Criteria
+
 * List todo items in readable manner (grid, list, etc...) with the appropriate priority displayed
 * Add a new item to the list with priority
 * Remove an item from the list
 * Clear the entire list
 
-### UX Acceptance Criteria:
+## UX Acceptance Criteria
+
 * It should be clear for users how they add new items
 * Once a user adds an item it should be clear where that item sits within their list
 * Users should see clearly see the status of a items in the list
 * Animation is used to give users clear feedback when list items are re-ordered
 
 
-### Technical focus
+## Technical focus
 
 Having a small amount of Vue.js experiance (one tiny app in production),
 I wanted to use this as an oppertunity to learn some new things about Vue.
@@ -52,7 +54,7 @@ testing for Drupal but really want to translate this to my JS apps.
 better define user journey maps into test plans but have yet to write e2e tests
 myself.
 
-### User experiance focus
+## User experiance focus
 
 Numerous studies and theories over time can be found that show the role of lists
 in helping people get things done.
@@ -66,3 +68,9 @@ in helping people get things done.
 I want to make sure I keep my app fairly simple, intuative and smooth.
 There are loads of really great todo apps out there so I will thing of
 this as an MVP to avoid over complicating it.
+
+## Thing that would make this better
+
+* Adding Speech api input for to do items, see: https://codepen.io/JamieCurnow/pen/ZoxVQg?editors=1010
+* Persist list between sessions (local storage), see: https://travishorn.com/add-localstorage-to-your-vue-app-in-2-lines-of-code-56eb2c9f371b
+* Create groups or categories for todos so they can be organised in groups or trello style swim lanes
