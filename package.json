@@ -22,6 +22,7 @@
     "@vue/cli-service": "^4.1.0",
     "@vue/eslint-config-prettier": "^5.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
+    "animate.css": "^3.7.2",
     "babel-eslint": "^10.0.3",
     "chai": "^4.1.2",
     "chromedriver": "78",
@@ -30,6 +31,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "geckodriver": "^1.19.1",
     "node-sass": "^4.12.0",
+    "normalize.css": "^8.0.1",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"

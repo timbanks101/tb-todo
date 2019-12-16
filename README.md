@@ -36,7 +36,7 @@ npm run lint
 * It should be clear for users how they add new items
 * Once a user adds an item it should be clear where that item sits within their list
 * Users should see clearly see the status of a items in the list
-* Animation is used to give users clear feedback when list items are re-ordered
+* Animation is used to give users clear feedback when list items are added or removed
 
 
 ## Technical focus
@@ -48,11 +48,12 @@ I find Vue really nice to work with, which is a personal trap for me because I
 typically get excited and start off trying to do too much at once!
 
 The technical things I really want to try / learn more about here:
-* Vue cli 3 build in unit testing with jest. I have experiance of phpunit
-testing for Drupal but really want to translate this to my JS apps.
-* Vue cli 3 build in e2e testing with nightwatch. I have worked with QA teams to
-better define user journey maps into test plans but have yet to write e2e tests
-myself.
+* Vue cli 3 setup and tooling; I havent used the cli recenlty and it will
+be great to see how fare it has come
+* Vue animations; I have played with these a little but would love to try list group animaitons
+* Unit and end to end testing; A must on any production applicaiton but given
+my ambition to polish the UI and have a decent feature set I might not get
+to spend much time on these here
 
 ## User experiance focus
 
@@ -72,11 +73,9 @@ so I will thing of this as a basic prototype to avoid over complicating it.
 
 ## Thing that would make this better
 
+* More tests :(
+* Editing todos was originanlly on my list but I ran out of time
+* Filtering and Sorting controls
 * Adding Speech api input for to do items, see: https://codepen.io/JamieCurnow/pen/ZoxVQg?editors=1010
-* Persist list between sessions (local storage), see: https://travishorn.com/add-localstorage-to-your-vue-app-in-2-lines-of-code-56eb2c9f371b
 * Create groups or categories for todos so they can be organised in groups or trello style swim lanes
 
-## Cool Vue things I didn't use
-
-* Nuxt; a go to for server side rendering so the app aces seo and performance measures
-*
