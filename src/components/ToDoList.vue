@@ -13,7 +13,7 @@
 
         <!-- Set item priority -->
         <b-field class="add-priority">
-          <b-select title="Set priority" v-model="newTodoPriority">
+          <b-select title="Set priority" v-model="newTodoPriority" rounded>
             <option
               v-for="option in priorities"
               :value="option"
@@ -28,7 +28,8 @@
           class="add-todo-button"
           @click="addTodo"
           title="Add this to do"
-          v-show="newTodo.length > 0"
+          :class="{ disabled: newTodo.length === 0 }"
+          :disabled="newTodo.length === 0"
         >
           <b-icon icon="plus"></b-icon>
         </button>
@@ -57,14 +58,19 @@
           <span>Delete all</span>
         </b-button>
       </div>
-      <transition-group name="fade" mode="in-out" appear tag="DIV">
+      <transition-group
+        name="fade"
+        appear
+        tag="DIV"
+        :style="{ '--total': sortedTodos.length }"
+      >
         <to-do-items
           v-for="(todoItem, i) in sortedTodos"
           :todoItem="todoItem"
-          :key="i + 0"
-          :id="i"
+          :key="todoItem.id"
           @toggleTodo="onToggleTodo"
           @deleteTodo="onDeleteTodo"
+          :style="{ '--i': i }"
         />
       </transition-group>
     </section>
@@ -81,13 +87,58 @@ export default {
   },
   data() {
     return {
-      todos: [
+      demoTodos: [
         {
-          title: "One to get you started",
+          id: 1,
+          title:
+            "List todo items in readable manner (grid, list, etc...) with the appropriate priority displayed",
+          priority: { id: 1, name: "High" },
+          done: false
+        },
+        {
+          id: 2,
+          title: "Add a new item to the list with priority",
+          priority: { id: 1, name: "High" },
+          done: false
+        },
+        {
+          id: 3,
+          title: "Remove an item from the list",
+          priority: { id: 1, name: "High" },
+          done: false
+        },
+        {
+          id: 4,
+          title: "Clear the entire list",
+          priority: { id: 1, name: "High" },
+          done: false
+        },
+        {
+          id: 5,
+          title: "Save to local storage and reload when entering the page",
+          priority: { id: 2, name: "Medium" },
+          done: false
+        },
+        {
+          id: 6,
+          title: "Sorting by priority",
+          priority: { id: 2, name: "Medium" },
+          done: false
+        },
+        {
+          id: 7,
+          title: "List animations",
+          priority: { id: 3, name: "Low" },
+          done: false
+        },
+        {
+          id: 8,
+          title: "Complete all",
           priority: { id: 3, name: "Low" },
           done: false
         }
       ],
+      todos: [],
       newTodo: "",
       newTodoPriority: { id: 3, name: "Low" },
       sorting: -1,
@@ -100,14 +151,10 @@ export default {
   },
   mounted() {
     if (localStorage.getItem("todos")) {
-      try {
-        // If the local storage data is ok, use it.
-        this.todos = JSON.parse(localStorage.getItem("todos"));
-      } catch (e) {
-        // Remove the todos so we have a clean starting point.
-        localStorage.removeItem("todos");
-      }
+      // If the local storage data is ok, use it.
+      this.todos = JSON.parse(localStorage.getItem("todos"));
     } else {
+      this.todos = this.demoTodos;
       this.saveTodos();
     }
   },
@@ -126,8 +173,14 @@ export default {
       if (!this.newTodo.length > 0) {
         return;
       }
+      // Get the highest number id to iterate on it.
+      const highestId = Math.max.apply(
+        Math,
+        this.todos.map(item => item.id)
+      );
       // Add a new to do item.
       this.todos.push({
+        id: highestId + 1,
         title: this.newTodo,
         priority: this.newTodoPriority,
         done: false
@@ -250,10 +303,10 @@ export default {
 .add-todo-button {
   position: absolute;
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   right: 10px;
-  top: 11px;
+  top: 10px;
   border-radius: 50px;
   border: 2px solid;
   border-color: #dbdbdb;
@@ -261,12 +314,22 @@ export default {
   color: $primary;
   transition: all 0.4s ease;
 
-  &:hover {
-    transition: all 0.4s ease;
-    color: $white;
-    background: $primary;
-    transform: scale(1.2);
-    cursor: pointer;
+  &.disabled {
+    color: $grey;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  &:not(.disabled) {
+    &:hover {
+      transition: all 0.4s ease;
+      color: $white;
+      background: $primary;
+      transform: scale(1.2);
+      cursor: pointer;
+    }
   }
 }
 

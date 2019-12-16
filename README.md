@@ -14,10 +14,10 @@ npm run serve
 # build for production with minification
 npm run build
 
-# unit tests are run with
+# (Todo: write tests) unit tests are run with
 npm run test:unit
 
-# end to end tests are run with
+# (Todo: write tests) end to end tests are run with
 npm run test:e2e
 
 # lint and prettify code with

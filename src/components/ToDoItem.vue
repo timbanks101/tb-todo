@@ -31,7 +31,7 @@
 <script>
 export default {
   name: "todoItem",
-  props: ["todoItem", "id"],
+  props: ["todoItem"],
   methods: {
     toggleTodo() {
       // Handle checkbox boolean weirdness.
@@ -72,7 +72,7 @@ export default {
     }
 
     .todo-title {
-      word-break: break-all;
+      word-break: break-word;
       padding: 12px 60px;
       display: block;
       line-height: 1.2;
@@ -112,6 +112,10 @@ export default {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     .remove-todo-button {
@@ -128,6 +132,8 @@ export default {
 
       &:hover {
         cursor: pointer;
+        border-color: $danger;
+        color: $danger;
       }
     }
 
@@ -144,6 +150,11 @@ export default {
 
   &.done {
     text-decoration: line-through;
+
+    .todo-title {
+      color: $grey-light;
+      transition: all 0.2s ease;
+    }
 
     .item:before {
       content: "\F134";
