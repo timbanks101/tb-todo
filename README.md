@@ -73,9 +73,9 @@ so I will thing of this as a basic prototype to avoid over complicating it.
 
 ## Thing that would make this better
 
-* More tests :(
-* Editing todos was originanlly on my list but I ran out of time
-* Filtering and Sorting controls
+* Tests :(
+* Editing todos
+* Filtering and Sorting controls maybe with vue draggable: https://github.com/SortableJS/Vue.Draggable
 * Adding Speech api input for to do items, see: https://codepen.io/JamieCurnow/pen/ZoxVQg?editors=1010
 * Create groups or categories for todos so they can be organised in groups or trello style swim lanes
 
