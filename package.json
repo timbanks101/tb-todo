@@ -34,7 +34,6 @@
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10",
-    "buefy": "^0.8.8"
   },
   "eslintConfig": {
     "root": true,
