@@ -45,7 +45,7 @@
           title="Complete all"
         >
           <b-icon icon="check-all" size="is-small"></b-icon>
-          <span>Comeplete all</span>
+          <span>Complete all</span>
         </b-button>
 
         <b-button
@@ -329,6 +329,9 @@ export default {
       background: $primary;
       transform: scale(1.2);
       cursor: pointer;
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.125em rgba(0, 153, 0, 0.25);
     }
   }
 }

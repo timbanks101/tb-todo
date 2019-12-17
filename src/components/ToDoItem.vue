@@ -128,12 +128,17 @@ export default {
       border-color: $black;
       color: $black;
       transition: all 0.2s ease;
-      opacity: 0;
+
+      @include from($desktop) {
+        opacity: 0;
+      }
 
       &:hover {
         cursor: pointer;
         border-color: $danger;
         color: $danger;
+        transform: scale(1.1);
+        transition: all 0.2s ease;
       }
     }
 
